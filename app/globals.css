@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  --color-teal: #16434d;
+  --color-wine: #ab1223;
+  --color-beige: #e6d6c3;
+  --color-black: #050505;
+
+  --font-sans: var(--font-outfit), sans-serif;
+  --font-heading: var(--font-playfair), serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #e6d6c3;
+}
+::-webkit-scrollbar-thumb {
+  background: #16434d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ab1223;
+}
+
+/* Global Reset overrides */
+body {
+  font-family: var(--font-outfit), sans-serif;
+  background-color: #e6d6c3;
+  color: #050505;
+  overflow-x: hidden;
+}
+
+/* Hide default cursor on desktop when CustomCursor is active */
+.custom-cursor-active,
+.custom-cursor-active a,
+.custom-cursor-active button,
+.custom-cursor-active select,
+.custom-cursor-active input,
+.custom-cursor-active textarea,
+.custom-cursor-active [role='button'],
+.custom-cursor-active .cursor-pointer {
+  cursor: none !important;
+}
+
+/* GPU acceleration for animating scroll columns */
+.will-change-transform {
+  will-change: transform;
+}
+
+
+/* Headings: Playfair Display Serif - similar to elegant editorial screenshots */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), serif;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/* Glassmorphism Card Overlay without drop shadows */
+.glass-panel {
+  background: rgba(230, 214, 195, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(22, 67, 77, 0.15);
+}
+
+.glass-panel-dark {
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 214, 195, 0.1);
+}
+
+/* Floating Animation for SVGs */
+.floating-slow {
+  animation: floatSlow 6s ease-in-out infinite alternate;
+}
+
+.floating-medium {
+  animation: floatMedium 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+}
+
+@keyframes floatMedium {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-25px) rotate(-4deg);
+  }
+}
+
+/* Continuous Vertical Upward Scroll Animation for Background Carousel */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-scroll-up-slow {
+  animation: scrollUp 45s linear infinite;
+}
+
+.animate-scroll-up-medium {
+  animation: scrollUp 32s linear infinite;
+}
+
+.animate-scroll-up-fast {
+  animation: scrollUp 38s linear infinite;
+}
+
+/* Remove default focus outline shadows, keep clean borders */
+*:focus {
+  outline: 2px solid #ab1223;
+  outline-offset: 2px;
+}
+
+/* Button wave animation */
+@keyframes wave-flow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-wave-flow {
+  animation: wave-flow 1.5s linear infinite;
+}
+
+
+/* Make calendar picker indicator visible on dark background inputs */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.9) sepia(0.2) saturate(0.8) hue-rotate(15deg);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
