@@ -202,7 +202,7 @@ export default function GiftCardSection() {
       setIsSubmitting(true);
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/gift-voucher`,
+        `${process.env.NEXT_PUBLIC_API_URL}/purchase-voucher`,
         {
           method: "POST",
           headers: {
