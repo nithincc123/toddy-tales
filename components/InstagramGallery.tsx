@@ -28,8 +28,6 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 
 interface GalleryItem {
   id: string;
-  likes: string;
-  comments: string;
   image: string;
   caption_en: string;
   caption_de: string;
@@ -372,20 +370,6 @@ export default function InstagramGallery() {
                       ? activeItem.caption_de || activeItem.caption_en
                       : activeItem.caption_en}
                   </p>
-
-                  {/* Metrics */}
-                  <div className="flex gap-6 pt-4 border-t border-[#e6d6c3]/10 text-xs md:text-sm font-sans">
-                    <span className="flex items-center gap-2">
-                      <Heart className="w-4 h-4 text-[#ab1223] fill-[#ab1223]" />
-                      <strong>{activeItem.likes}</strong>{" "}
-                      {activeLang === "de" ? "Gefällt mir" : "Likes"}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <MessageCircle className="w-4 h-4 text-[#e6d6c3]/60" />
-                      <strong>{activeItem.comments}</strong>{" "}
-                      {activeLang === "de" ? "Kommentare" : "Comments"}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Redirect button to Instagram */}

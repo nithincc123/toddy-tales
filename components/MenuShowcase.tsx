@@ -211,7 +211,7 @@ export default function MenuShowcase() {
               {/* Star of the card: The Image (No borders/shadows, inherits rounded corners) */}
               <div className="absolute inset-0 z-0">
                 <img
-                  src={menu.image}
+                  src={menu.image || ""}
                   alt={`${menu.title} - ${menu.subtitle}`}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
