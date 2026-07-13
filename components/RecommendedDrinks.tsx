@@ -276,43 +276,62 @@ export default function RecommendedDrinks() {
                 </div>
 
                 {/* Top Overlay category tag */}
-                <div className="absolute top-6 left-6 z-20">
-                  <span className="px-3.5 py-1 bg-[#ab1223] text-white text-xs md:text-sm uppercase tracking-[0.15em] font-sans font-bold rounded">
-                    {activeLang === "de"
-                      ? drink.tag_de || drink.tag_en
-                      : drink.tag_en}
-                  </span>
-                </div>
+                {(activeLang === "de"
+                  ? drink.tag_de || drink.tag_en
+                  : drink.tag_en
+                )?.trim() && (
+                  <div className="absolute top-6 left-6 z-20">
+                    <span className="px-3.5 py-1 bg-[#ab1223] text-white text-xs md:text-sm uppercase tracking-[0.15em] font-sans font-bold rounded">
+                      {activeLang === "de"
+                        ? drink.tag_de || drink.tag_en
+                        : drink.tag_en}
+                    </span>
+                  </div>
+                )}
 
                 {/* Price tag in top right */}
-                <div className="absolute top-6 right-6 z-20">
-                  <span className="text-sm md:text-base font-mono font-bold text-[#e6d6c3] bg-black/60 px-2.5 py-1 rounded-md border border-[#e6d6c3]/15">
-                    €{drink.price}
-                  </span>
-                </div>
+                {drink.price && (
+                  <div className="absolute top-6 right-6 z-20">
+                    <span className="text-sm md:text-base font-mono font-bold text-[#e6d6c3] bg-black/60 px-2.5 py-1 rounded-md border border-[#e6d6c3]/15">
+                      €{drink.price}
+                    </span>
+                  </div>
+                )}
 
                 {/* Bottom Overlay text stack */}
                 <div className="relative z-10 w-full flex flex-col items-start">
-                  <h3 className="text-xl md:text-2xl font-heading font-black text-white uppercase tracking-wide leading-tight transition-colors duration-300 group-hover:text-[#e6d6c3]">
-                    {activeLang === "de"
-                      ? drink.title_de || drink.title_en
-                      : drink.title_en}
-                  </h3>
+                  {(activeLang === "de"
+                    ? drink.title_de || drink.title_en
+                    : drink.title_en
+                  )?.trim() && (
+                    <h3 className="text-xl md:text-2xl font-heading font-black text-white uppercase tracking-wide leading-tight transition-colors duration-300 group-hover:text-[#e6d6c3]">
+                      {activeLang === "de"
+                        ? drink.title_de || drink.title_en
+                        : drink.title_en}
+                    </h3>
+                  )}
 
-                  {/* Elegant vertical divider */}
-                  <div className="w-8 h-[2px] bg-[#ab1223] my-3 group-hover:w-16 transition-all duration-500" />
+                  {(activeLang === "de"
+                    ? drink.content_de || drink.content_en
+                    : drink.content_en
+                  )?.trim() && (
+                    <>
+                      {/* Elegant vertical divider */}
+                      <div className="w-8 h-[2px] bg-[#ab1223] my-3 group-hover:w-16 transition-all duration-500" />
 
-                  {/* Description revealed on hover */}
-                  <div className="font-sans text-xs md:text-sm text-[#e6d6c3]/80 leading-relaxed max-h-0 opacity-0 group-hover:max-h-[120px] group-hover:opacity-100 transition-all duration-500 ease-out overflow-hidden">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html:
-                          activeLang === "de"
-                            ? drink.content_de || drink.content_en
-                            : drink.content_en,
-                      }}
-                    />
-                  </div>
+                      {/* Description revealed on hover */}
+                      <div className="font-sans text-xs md:text-sm text-[#e6d6c3]/80 leading-relaxed max-h-0 opacity-0 group-hover:max-h-[120px] group-hover:opacity-100 transition-all duration-500 ease-out overflow-hidden">
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              activeLang === "de"
+                                ? drink.content_de || drink.content_en
+                                : drink.content_en,
+                          }}
+                        />
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             ))}

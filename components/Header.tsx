@@ -10,7 +10,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { activeLang, setActiveLang } = useLanguage();
-  const [isMenuDropdownOpen, setIsMenuDropdownOpen] = useState(false);
+  const [isMobileMenuDropdownOpen, setIsMobileMenuDropdownOpen] =
+    useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -208,10 +209,7 @@ export default function Header() {
                   name: activeLang === "en" ? "The Story" : "Die Geschichte",
                   href: "/#story",
                 },
-                {
-                  name: activeLang === "en" ? "Menus" : "Speisekarten",
-                  href: "/#menu",
-                },
+
                 {
                   name: activeLang === "en" ? "Reservations" : "Reservierungen",
                   href: "/#reservations-page",
@@ -245,6 +243,54 @@ export default function Header() {
                   {item.name}
                 </motion.a>
               ))}
+
+              {/* Mobile Menus Dropdown */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.35 }}
+                className="flex flex-col items-center"
+              >
+                <button
+                  onClick={() =>
+                    setIsMobileMenuDropdownOpen(!isMobileMenuDropdownOpen)
+                  }
+                  className="hover:text-[#ab1223] transition-colors"
+                >
+                  {activeLang === "en" ? "Menus ▼" : "Speisekarten ▼"}
+                </button>
+
+                <AnimatePresence>
+                  {isMobileMenuDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="mt-4 flex flex-col items-center gap-3 overflow-hidden"
+                    >
+                      <a
+                        href="/menu/toddy-tales-food-menu.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-lg text-[#e6d6c3] hover:text-[#ab1223]"
+                      >
+                        🍽 Food Menu
+                      </a>
+
+                      <a
+                        href="/menu/toddy-tales-drink-menu.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-lg text-[#e6d6c3] hover:text-[#ab1223]"
+                      >
+                        🍷 Drink Menu
+                      </a>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

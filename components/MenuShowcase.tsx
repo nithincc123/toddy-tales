@@ -191,7 +191,7 @@ export default function MenuShowcase() {
 
         {/* 2x2 Grid of Large Cards (Shadowless, borderless, rounded corners) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {menus.map((menu, index) => (
+          {menus.slice(0, 2).map((menu, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
