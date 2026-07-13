@@ -236,9 +236,26 @@ export default function MenuShowcase() {
                 <span className="font-sans text-xs md:text-sm uppercase tracking-[0.25em] text-[#e6d6c3]/80 font-bold mb-1">
                   {menu.subtitle}
                 </span>
-                <h3 className="text-2xl md:text-3xl font-heading font-black text-white mb-3 transition-colors duration-300">
-                  {menu.title}
-                </h3>
+
+                {index === 0 || index === 1 ? (
+                  <a
+                    href={
+                      index === 0
+                        ? "/menu/toddy-tales-food-menu.pdf"
+                        : "/menu/toddy-tales-drink-menu.pdf"
+                    }
+                    target="_blank"
+                    className="inline-block"
+                  >
+                    <h3 className="text-2xl md:text-3xl font-heading font-black text-white mb-3 transition-colors duration-300 hover:text-[#C89B3C] cursor-pointer">
+                      {menu.title}
+                    </h3>
+                  </a>
+                ) : (
+                  <h3 className="text-2xl md:text-3xl font-heading font-black text-white mb-3 transition-colors duration-300">
+                    {menu.title}
+                  </h3>
+                )}
 
                 {/* Description */}
                 <p className="font-sans text-xs md:text-sm text-beige/70 leading-relaxed mb-4 max-w-md line-clamp-2 md:line-clamp-none">

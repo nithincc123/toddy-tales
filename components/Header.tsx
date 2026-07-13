@@ -10,6 +10,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { activeLang, setActiveLang } = useLanguage();
+  const [isMenuDropdownOpen, setIsMenuDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,10 +45,29 @@ export default function Header() {
               {activeLang === "en" ? "THE STORY" : "DIE GESCHICHTE"}
             </a>
 
-            <a href="/#menu">
-              {activeLang === "en" ? "MENUS" : "SPEISEKARTEN"}
-            </a>
+            <div className="relative group">
+              <button className="flex items-center gap-1 hover:text-[#ab1223] transition-colors">
+                {activeLang === "en" ? "MENUS" : "SPEISEKARTEN"}
+              </button>
 
+              <div className="absolute top-full left-0 w-56 rounded-lg bg-[#111] border border-[#2a2a2a] shadow-xl overflow-hidden z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <a
+                  href="/menu/toddy-tales-food-menu.pdf"
+                  target="_blank"
+                  className="block px-5 py-3 text-sm text-[#e6d6c3] hover:bg-[#ab1223] transition-colors"
+                >
+                  🍽 Food Menu
+                </a>
+
+                <a
+                  href="/menu/toddy-tales-drink-menu.pdf"
+                  target="_blank"
+                  className="block px-5 py-3 text-sm text-[#e6d6c3] hover:bg-[#ab1223] transition-colors"
+                >
+                  🍷 Drink Menu
+                </a>
+              </div>
+            </div>
             <a href="/#reservations-page">
               {activeLang === "en" ? "CATERING" : "CATERING"}
             </a>
