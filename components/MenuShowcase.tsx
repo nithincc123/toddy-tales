@@ -191,7 +191,7 @@ export default function MenuShowcase() {
 
         {/* 2x2 Grid of Large Cards (Shadowless, borderless, rounded corners) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {menus.slice(0, 2).map((menu, index) => (
+          {menus.slice(0, 3).map((menu, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -237,12 +237,14 @@ export default function MenuShowcase() {
                   {menu.subtitle}
                 </span>
 
-                {index === 0 || index === 1 ? (
+                {index === 0 || index === 1 || index === 2 ? (
                   <a
                     href={
                       index === 0
                         ? "/menu/toddy-tales-food-menu.pdf"
-                        : "/menu/toddy-tales-drink-menu.pdf"
+                        : index === 1
+                          ? "/menu/toddy-tales-drink-menu.pdf"
+                          : "/menu/toddy-tales-lunch-menu.pdf"
                     }
                     target="_blank"
                     className="inline-block"

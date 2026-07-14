@@ -67,6 +67,14 @@ export default function Header() {
                 >
                   🍷 Drink Menu
                 </a>
+
+                <a
+                  href="/menu/toddy-tales-lunch-menu.pdf"
+                  target="_blank"
+                  className="block px-5 py-3 text-sm text-[#e6d6c3] hover:bg-[#ab1223] transition-colors"
+                >
+                  🍛 Lunch Menu
+                </a>
               </div>
             </div>
             <a href="/#reservations-page">
@@ -286,6 +294,16 @@ export default function Header() {
                         className="text-lg text-[#e6d6c3] hover:text-[#ab1223]"
                       >
                         🍷 Drink Menu
+                      </a>
+
+                      <a
+                        href="/menu/toddy-tales-lunch-menu.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-lg text-[#e6d6c3] hover:text-[#ab1223]"
+                      >
+                        🍛 Lunch Menu
                       </a>
                     </motion.div>
                   )}

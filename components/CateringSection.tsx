@@ -336,19 +336,16 @@ export default function CateringSection() {
                           : "Select Budget Range"}
                       </option>
                       <option value="under-1k" className="bg-[#050505]">
-                        {activeLang === "de" ? "Unter 1.000 €" : "Under €1,000"}
+                        {activeLang === "de" ? "Unter 500 €" : "Under €500"}
+                      </option>
+                      <option value="1k-3k" className="bg-[#050505]">
+                        €500 - €1,000
                       </option>
                       <option value="1k-3k" className="bg-[#050505]">
                         €1,000 - €3,000
                       </option>
                       <option value="3k-5k" className="bg-[#050505]">
                         €3,000 - €5,000
-                      </option>
-                      <option value="5k-10k" className="bg-[#050505]">
-                        €5,000 - €10,000
-                      </option>
-                      <option value="10k-plus" className="bg-[#050505]">
-                        €10,000+
                       </option>
                     </select>
                   </div>

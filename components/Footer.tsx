@@ -24,27 +24,27 @@ export default function Footer() {
     },
     {
       day: activeLang === "de" ? "Dienstag" : "Tuesday",
-      time: "17:00 - 01:00",
+      time: "12:00 - 23:00",
     },
     {
       day: activeLang === "de" ? "Mittwoch" : "Wednesday",
-      time: "17:00 - 01:00",
+      time: "12:00 - 23:00",
     },
     {
       day: activeLang === "de" ? "Donnerstag" : "Thursday",
-      time: "17:00 - 01:00",
+      time: "12:00 - 23:00",
     },
     {
       day: activeLang === "de" ? "Freitag" : "Friday",
-      time: "17:00 - 03:00",
+      time: "12:00 - 00:00",
     },
     {
       day: activeLang === "de" ? "Samstag" : "Saturday",
-      time: "17:00 - 03:00",
+      time: "12:00 - 00:00",
     },
     {
       day: activeLang === "de" ? "Sonntag" : "Sunday",
-      time: "14:00 - 01:00",
+      time: "12:00 - 23:00",
     },
   ];
 
@@ -131,12 +131,12 @@ export default function Footer() {
                     : "Toddy Tales Bar & Kitchen"}
                 </p>
                 <p className="mt-1">
-                  Torstraße 104,
+                  Sonntagstraße 1,
                   <br />
-                  10119 Berlin-Mitte
+                  10245 Berlin
                 </p>
                 <a
-                  href="https://maps.google.com/?q=Torstraße+104,+10119+Berlin"
+                  href="https://maps.google.com/?q=Sonntagstraße+1,+10245+Berlin"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-3 text-xs md:text-sm text-[#e6d6c3] underline hover:text-[#ab1223] transition-colors"
@@ -189,11 +189,11 @@ export default function Footer() {
                   <span>+49 (0) 30 2005 9670</span>
                 </a>
                 <a
-                  href="mailto:hello@toddytales.de"
+                  href="mailto:Info@toddytales.de"
                   className="flex items-center gap-3 hover:text-[#ab1223] transition-colors duration-300"
                 >
                   <Mail className="w-4 h-4 text-[#ab1223]" />
-                  <span>hello@toddytales.de</span>
+                  <span>Info@toddytales.de</span>
                 </a>
               </div>
             </div>

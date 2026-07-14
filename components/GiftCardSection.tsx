@@ -666,22 +666,30 @@ export default function GiftCardSection() {
                     <CheckCircle className="w-12 h-12 text-[#e6d6c3]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-heading font-black text-white uppercase tracking-wider">
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C89B3C] mb-2">
                       {activeLang === "de"
-                        ? "Gutschein versendet"
-                        : "Gift Card Dispatched"}
+                        ? "ANFRAGE ERHALTEN"
+                        : "REQUEST RECEIVED"}
+                    </p>
+
+                    <h3 className="text-3xl font-heading font-black text-white">
+                      {activeLang === "de" ? "Vielen Dank" : "Thank You"}
                     </h3>
+
                     <p className="font-sans text-xs sm:text-sm text-[#e6d6c3]/85 mt-2 max-w-sm mx-auto leading-relaxed">
                       {activeLang === "de" ? (
                         <>
-                          Ihr Tavernengutschein im Wert von €{finalAmount} wurde
-                          erfolgreich an <strong>{recipientEmail}</strong>{" "}
-                          gesendet.
+                          Ihre Anfrage für einen digitalen Gutschein wurde
+                          erfolgreich empfangen. Eine Bestätigungs-E-Mail mit
+                          den Gutscheindetails wird in Kürze an{" "}
+                          <strong>{recipientEmail}</strong> gesendet.
                         </>
                       ) : (
                         <>
-                          Your €{finalAmount} tavern voucher has been emailed
-                          successfully to <strong>{recipientEmail}</strong>.
+                          Your digital voucher request has been successfully
+                          received. A confirmation email containing the voucher
+                          details will be sent to{" "}
+                          <strong>{recipientEmail}</strong> shortly.
                         </>
                       )}
                     </p>
