@@ -347,6 +347,9 @@ export default function CateringSection() {
                       <option value="3k-5k" className="bg-[#050505]">
                         €3,000 - €5,000
                       </option>
+                      <option value="5k+" className="bg-[#050505]">
+                        €5,000+
+                      </option>
                     </select>
                   </div>
                 </div>
