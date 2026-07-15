@@ -210,9 +210,7 @@ export default function RecommendedDrinks() {
                 transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
                 className="text-3xl md:text-5xl font-heading font-black tracking-tight leading-none text-white uppercase mb-6"
               >
-                {activeLang === "de"
-                  ? "Unsere Tavernen-Spezialitäten"
-                  : "Signature Tavern Blends"}
+                {activeLang === "de" ? "Hausmischungen" : "Signature Blends"}
               </motion.h2>
             </div>
             <p className="font-sans text-sm md:text-base text-[#e6d6c3]/80 leading-relaxed">
