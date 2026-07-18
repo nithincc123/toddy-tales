@@ -250,6 +250,20 @@ export default function Footer() {
                 ? "Alle Rechte vorbehalten."
                 : "All rights reserved."}
             </p>
+
+            <p>
+              {activeLang === "de"
+                ? "Webdesign-Unternehmen in Kochi, "
+                : "Webdesign company in Kochi, "}
+              <a
+                href="https://www.techsoftweb.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Techsoft
+              </a>
+            </p>
+
             <div className="mt-1.5 flex items-center justify-center md:justify-end gap-1.5 text-[9px] opacity-40 select-none font-sans">
               <span>
                 {" "}
