@@ -401,29 +401,16 @@ export default function ReservationSection() {
                   <p className="font-sans text-sm text-[#e6d6c3]/80 mt-3 max-w-md mx-auto leading-relaxed">
                     {activeLang === "de" ? (
                       <>
-                        Vielen Dank, <strong>{name}</strong>. Ihre Reservierung
-                        für <strong>{guests}</strong>{" "}
-                        {parseInt(guests) === 1 ? "Gast" : "Gäste"} am{" "}
-                        <strong>{date}</strong> um{" "}
-                        <strong>
-                          {timeOptions.find((o) => o.value === time)?.label ||
-                            time}
-                        </strong>{" "}
-                        wurde bestätigt. Eine Bestätigung wurde an{" "}
-                        <strong>{email}</strong> gesendet.
+                        Vielen Dank, <strong>{name}</strong>. Ihre
+                        Reservierungsanfrage wurde erfolgreich übermittelt.
+                        Bitte warten Sie auf unsere Bestätigungs-E-Mail, bevor
+                        Sie uns besuchen.
                       </>
                     ) : (
                       <>
-                        Thank you, <strong>{name}</strong>. Your booking for{" "}
-                        <strong>{guests}</strong>{" "}
-                        {parseInt(guests) === 1 ? "guest" : "guests"} on{" "}
-                        <strong>{date}</strong> at{" "}
-                        <strong>
-                          {timeOptions.find((o) => o.value === time)?.label ||
-                            time}
-                        </strong>{" "}
-                        is confirmed. A receipt has been dispatched to{" "}
-                        <strong>{email}</strong>.
+                        Thank you, <strong>{name}</strong>. Your reservation
+                        request has been successfully received. Please wait for
+                        our confirmation email before visiting.
                       </>
                     )}
                   </p>
